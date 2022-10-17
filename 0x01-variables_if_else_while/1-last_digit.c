@@ -3,8 +3,8 @@
 #include <time.h>
 
 /**
- * main - Entry
- * Return: Always 0
+ * main - return the last digit of a randomly generated number.
+ * Return: returns 0(succssful)
  */
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
 	{
 		printf("Last digit of %d is %d and is greater than 5\n", n, a);
 	}
-	else if (a == 0)
+	else if ((a < 6) && (num < 0))
 	{
 		printf("Last digit of %d is %d and is 0\n", n, a);
 	}
