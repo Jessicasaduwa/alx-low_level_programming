@@ -19,5 +19,5 @@ int main(void)
 	}
 	printf("%d\n", total);
 
-	retun (0);
+	return (0);
 }
