@@ -1,0 +1,23 @@
+#include "main.h"
+
+/**
+ * _strcpy - copies the string pointed to by src
+ * @dest: destination input
+ * @src: source
+ * Return: Pointer to 'dest'
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (*(src + i) != '\0')
+	{
+		*(dest + i) = *(src + i);
+		len++;
+	}
+
+	*(dest + i) = '\0';
+
+	return (dest);
+}
