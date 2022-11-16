@@ -24,6 +24,7 @@ int _strlen(char *str)
  * _strcopy - Copies a string pointed to by src to a buffer pointed to by dest
  * @dest: The buffer storing the string copy.
  * @src: The source string
+ * Return: the buffer
  */
 char *_strcopy(char *dest, char *src)
 {
