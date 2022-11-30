@@ -53,27 +53,23 @@ size_t looped_listint_len(const listint_t *head)
 }
 
 /**
- * free_listint_safe - Frees a listint_t list safely
- *		(i.e can free lists containing loops).
- * @h: pointer to the address of the head of the listint_t list.
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: pointer to the head of the listint_t list.
  *
- * Return: the size of the list that was freed.
- * Description: The function sets the head to NULL.
+ * Return: The number of nodes in the list.
  */
-size_t free_listint_safe(listint_t **h)
+size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *tmp;
-	size_t nodes, index;
+	size_t nodes, index = 0;
 
-	nodes = looped_listint_count(*h);
+	nodes = looped_listint_len(head);
 
 	if (nodes == 0)
 	{
-		for (; h != NULL && *h != NULL; nodes++)
+		for (; head != NULL; nodes++)
 		{
-			tmp = (*h)->next;
-			free(*h);
-			*h = tmp;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 	}
 
@@ -81,15 +77,12 @@ size_t free_listint_safe(listint_t **h)
 	{
 		for (index = 0; index < nodes; index++)
 		{
-			tmp = (*h)->next;
-			free(*h);
-			*h = tmp;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 
-		*h = NULL;
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
-
-	h = NULL;
 
 	return (nodes);
 }
